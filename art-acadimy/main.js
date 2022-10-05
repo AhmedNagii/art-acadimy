@@ -1,31 +1,47 @@
 
-// function objFilter(obj, callback) {
-//     let newObj = {}
-//     for (const key in obj) {
-//         if (callback(key) === obj[key]) {
-//            newObj[key] = obj[key]
-//         }
-//     }
-//     return newObj
-// }
 
-function rating(arrOfFuncs, value) {
-    let numOfTrue = 0
-    for (let i = 0; i < arrOfFuncs.length; i++) {
-        if(arrOfFuncs[i](value)){
-            numOfTrue++
-        }
-    }
+function addByX(x) {
 
-    const percentage  = numOfTrue / arrOfFuncs.length * 100
-    return percentage
+   function addInputTox(input) {
+      return input + x
+   }
+
+   return addInputTox
 }
 
 /*** Uncomment these to check your work! ***/
-const isEven = n => n % 2 === 0;
-const greaterThanFour = n => n > 4;
-const isSquare = n => Math.sqrt(n) % 1 === 0;
-const hasSix = n => n.toString().includes('6');
-const checks = [isEven, greaterThanFour, isSquare, hasSix];
-console.log(rating(checks, 64)); // should log: 100
-console.log(rating(checks, 66)); // should log: 75
+const addByTwo = addByX(2);
+// addByTwo(1); // => should return 3
+// addByTwo(2); // => should return 4
+// addByTwo(3); // => should return 5
+
+const addByThree = addByX(3);
+addByThree(1); // => should return 4
+addByThree(2); // => should return 5
+
+const addByFour = addByX(4);
+addByFour(4); // => should return 8
+addByFour(5); // => should return 9
+
+function once(func) {
+   let counter = 0
+   let outPut;
+
+ const innerfank = (val) =>{
+   if( counter === 0 ){
+      outPut = func(val)
+      counter ++
+     
+    
+ }
+ return outPut
+ }
+     
+    return innerfank
+ }
+
+   // /*** Uncomment these to check your work! ***/
+   const onceFunc = once(addByTwo);
+   console.log(onceFunc(4));  // => should log 6
+   console.log(onceFunc(10));  // => should log 6
+   console.log(onceFunc(9001));  // => should log 6

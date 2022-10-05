@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Blinker:wght@700&display=swap');
+
 :root {
   --clr-primary: #0A3E65;
   --clr-accent: #27AAE1;
@@ -14,7 +16,7 @@
   --fs-600: 1.4rem;
   --fs-700: 1.5rem;
   --fs-800: 1.775rem;
-  --fs-900: 2.225rem;
+  --fs-900: 3.125rem;
 }
 
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
@@ -35,6 +37,7 @@
 a,
 button {
   cursor: revert;
+  font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 /* Remove list styles (bullets/numbers) */
@@ -53,7 +56,14 @@ img {
 textarea {
   white-space: revert;
 }
+/* general style */
 
+.section-header{
+  color: #0A3E65;
+  font-size: var(--fs-900);
+  font-weight: var(--fw-bold);
+  line-height: 50px;
+}
 
 /* primary Nav bar */
 
@@ -135,14 +145,51 @@ textarea {
 }  
 
 
+/* our mission section */
+
+.section1{
+margin: 1em;
+}
+
+.section1 > p{
+  font-size: var(--fs-300);
+  line-height: 27px;
+  font-weight: var(--fw-regular);
+}
 
 
+
+@media(max-width : 420px) {
+  .section1-logo{
+    transform: rotate(140deg);
+   max-width: 200px;
+  }
+}
+
+
+/* collections section */
+
+.collection-section{
+  margin: 1em;
+}
+
+@media(max-width : 420px) {
+  .collection-img{
+    max-width: 150px;
+  }
+  .images-container{
+    width: 100%;
+    margin: 2em 0;
+    text-align: center;
+  }
+}
 /*services section */
 .services-section{
   display: flex;
  flex-flow: column;
  justify-content: center;
  gap: 1em;
+ margin: 1em;
 }
 .services-component{
   background-color: rgb(126, 126, 185);
@@ -155,10 +202,8 @@ textarea {
   padding: 1em;
 }
 
-.serv-img{
-  max-width: 80px;
-  min-height: 80px;
-}
+
+
 
 
 
@@ -167,4 +212,26 @@ textarea {
 footer{
   background-color: #0A3E65;
   color: var(--clr-white);
+  text-align: center;
+  padding: 1em;
+}
+
+.social-icons-list{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.social-icon{
+  max-width: 35px;
+  max-height: 35px;
+}
+
+.footer-btn{
+  background-color: var(--clr-white);
+  color: var(--clr-primary);
+  padding:.5em 1em ;
+  border-radius: 10px;
+  
 }
