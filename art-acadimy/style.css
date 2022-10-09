@@ -238,20 +238,31 @@ section{
 
 }
 
+.collection-img{
+  max-width: 350px;
+}
+
 .images-container {
   margin-top: 1em;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 350px  );
+  grid-template-columns: repeat(3, 1fr );
   justify-content: center;
 max-width: 67em;
 }
-@media(min-width: 1024px) {
+@media(max-width: 1100px) {
   .images-container {
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(2, 1fr);
 
   }
+  .collection-img{
+    max-width: 300px;
+  }
 }
-
+@media(max-width: 650px) {
+  .images-container {
+    grid-template-columns: 1fr
+  }
+}
 
 /*services section */
 .services-section {
